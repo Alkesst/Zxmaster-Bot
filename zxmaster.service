@@ -2,7 +2,7 @@
 Description=Zxmaster-Bot
 
 [Service]
-ExecStart=/home/pi/zxmaster_script.sh
+ExecStart=/home/pi/Documentos/Zxmaster-Bot/zxmaster_script.sh
 User=pi
 Group=pi
 

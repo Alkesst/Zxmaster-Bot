@@ -47,7 +47,7 @@ def random_ZXMAST3R_tweet(api):
     tokens = json.load(json_config)
     json_config.close()
     lista = api.user_timeline(tokens["user_id"])
-    tweet: str = ''
+    tweet = ''
     contador = 0
     while len(tweet) < 50 and contador < len(lista):
         splitted = lista[contador].text.split()

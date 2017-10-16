@@ -11,4 +11,4 @@ while [  $STATE == "error" ]; do
 echo "Initializating Bot..."
 echo
 echo "Bot running"
-python boi.py
+python3 boi.py

@@ -23,7 +23,7 @@ def main():
         lista_tweets = read_from_file()
         api.update_status(lista_tweets[cont % len(lista_tweets)])
         time.sleep(900)
-        tweet = random_ZXMAST3R_tweet(api)
+        tweet = random_zxmast3r_tweet(api)
         api.update_status(tweet)
         time.sleep(900)
         cont += 10
@@ -42,7 +42,7 @@ def read_from_file():
     return lista
 
 
-def random_ZXMAST3R_tweet(api):
+def random_zxmast3r_tweet(api):
     json_config = open("tokens.json", 'r')
     tokens = json.load(json_config)
     json_config.close()
@@ -62,6 +62,7 @@ def random_ZXMAST3R_tweet(api):
                 palabras += 1
             cont += 1
         contador += 1
+    return tweet
 
 
 if __name__ == "__main__":

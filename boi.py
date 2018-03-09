@@ -19,14 +19,23 @@ def main():
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth, wait_on_rate_limit=True)
     cont = 0
+    has_failed = False
     while True:
         lista_tweets = read_from_file()
-        api.update_status(lista_tweets[cont % len(lista_tweets)])
-        time.sleep(900)
-        tweet = random_zxmast3r_tweet(api)
-        api.update_status(tweet)
-        time.sleep(900)
-        cont += 10
+	has_failed = False
+	try:
+       	    api.update_status(lista_tweets[cont % len(lista_tweets)])
+	    try:
+		time.sleep(900)
+    		tweet = random_zxmast3r_tweet(api)
+ 		api.update_status(tweet)
+	    except:
+		has_failed = True
+	    if not has_failed:
+	   	 time.sleep(900)
+           	 cont += 1
+        except:
+	    pass
 
 
 def read_from_file():
@@ -49,7 +58,7 @@ def random_zxmast3r_tweet(api):
     lista = api.user_timeline(tokens["user_id"])
     tweet = ''
     contador = 0
-    while len(tweet) < 50 and contador < len(lista):
+    while len(tweet) < 75 and contador < len(lista):
         splitted = lista[contador].text.split()
         lines = len(splitted)
         random_pos = int(round(random.random() * lines, 0)) - 4

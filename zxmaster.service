@@ -5,6 +5,8 @@ Description=Zxmaster-Bot
 ExecStart=/home/pi/Documentos/Zxmaster-Bot/zxmaster_script.sh
 User=pi
 Group=pi
+Restart=always
+RestartSec=900
 
 [Install]
 WantedBy=network-online.target

@@ -35,3 +35,4 @@ cuando la gente es gilipollas 👌🏻😂👌🏻
 Persona = Gilipollas ∀ Persona ∈ Gente
 ∃p: Persona ∣ Gilipollas(p)
 Me cago en dios la gente no se cansa de ser gilipollas o que
+IBM es gilipollas y todos vosotros también

@@ -22,20 +22,20 @@ def main():
     has_failed = False
     while True:
         lista_tweets = read_from_file()
-	has_failed = False
-	try:
-       	    api.update_status(lista_tweets[cont % len(lista_tweets)])
-	    try:
-		time.sleep(900)
-    		tweet = random_zxmast3r_tweet(api)
- 		api.update_status(tweet)
-	    except:
-		has_failed = True
-	    if not has_failed:
-	   	 time.sleep(900)
-           	 cont += 1
+        has_failed = False
+    try:
+       	api.update_status(lista_tweets[cont % len(lista_tweets)])
+        try:
+            time.sleep(900)
+            tweet = random_zxmast3r_tweet(api)
+            api.update_status(tweet)
         except:
-	    pass
+            has_failed = True
+        if not has_failed:
+            time.sleep(900)
+            cont += 1
+    except:
+        pass
 
 
 def read_from_file():

@@ -102,3 +102,5 @@ ENV/
 
 # custom
 tokens.json
+.DS_Store
+.idea/
